@@ -37,8 +37,16 @@ public class MemberServiceImpl implements MemberService {
 	}
 	
 	@Override
+	public int modMember(MemberVO member) throws DataAccessException {
+		return memberDAO.modMember(member);
+	}
+	
+	
+	@Override
 	public MemberVO login(MemberVO memberVO) throws Exception{
 		return memberDAO.loginById(memberVO);
 	}
+	
+	
 
 }
