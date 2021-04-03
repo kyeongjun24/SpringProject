@@ -39,7 +39,7 @@ public class BoardControllerImpl  implements BoardController{
 	@Autowired
 	private BoardService boardService;
 	@Autowired
-	private ArticleVO articleVO;
+	private ArticleVO articleVO; 
 	
 	@Override
 	@RequestMapping(value= "/board/listArticles.do", method = {RequestMethod.GET, RequestMethod.POST})

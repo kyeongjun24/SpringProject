@@ -151,7 +151,7 @@
 			<artifactId>OracleDriver</artifactId>
 			<version>12.1.0.2.0</version>
 			<scope>system</scope>
-			<systemPath>D:\spring_Workspace\SpringEx2\src\main\webapp\WEB-INF\lib\ojdbc6.jar</systemPath>
+			<systemPath>C:\Users\kj313\OneDrive\바탕 화면\SpringProject\src\main\webapp\WEB-INF\lib\ojdbc6.jar</systemPath>
 		</dependency>    
 		
 		

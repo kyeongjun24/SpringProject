@@ -54,7 +54,7 @@ public class MemberControllerImpl   implements MemberController {
 		request.setCharacterEncoding("utf-8");
 		int result = 0;
 		result = memberService.addMember(member);
-		ModelAndView mav = new ModelAndView();
+		ModelAndView mav = new ModelAndView("redirect:/member/listMembers.do");
 		return mav;
 	}
 	
@@ -68,17 +68,17 @@ public class MemberControllerImpl   implements MemberController {
 		return mav;
 	}
 	
-//	@Override
-//	@RequestMapping(value="/member/modMember.do" ,method = RequestMethod.POST)
-//	public ModelAndView modMember(, 
-//						HttpServletRequest request, HttpServletResponse response) throws Exception{
-//		request.setCharacterEncoding("utf-8");
-//		memberService.mod
-//		
-//		ModelAndView mav = new ModelAndView("redirect:/member/listMembers.do");
-//		return mav;
-//	}
-//	
+	@Override
+	@RequestMapping(value="/member/modMember.do" ,method = {RequestMethod.GET, RequestMethod.POST})
+	public ModelAndView modMember(@ModelAttribute("member") MemberVO member,
+						HttpServletRequest request, HttpServletResponse response) throws Exception{
+		
+		request.setCharacterEncoding("utf-8");
+		memberService.modMember(member);
+		ModelAndView mav = new ModelAndView("redirect:/member/listMembers.do");
+		return mav;
+	}
+	
 	/*
 	@RequestMapping(value = { "/member/loginForm.do", "/member/memberForm.do" }, method =  RequestMethod.GET)
 	@RequestMapping(value = "/member/*Form.do", method =  RequestMethod.GET)
