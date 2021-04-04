@@ -41,12 +41,15 @@ public class MemberServiceImpl implements MemberService {
 		return memberDAO.modMember(member);
 	}
 	
+	@Override
+	public MemberVO modMemberGET(String id) throws DataAccessException {
+		return memberDAO.modMemberGET(id);
+	}
 	
 	@Override
 	public MemberVO login(MemberVO memberVO) throws Exception{
 		return memberDAO.loginById(memberVO);
 	}
-	
 	
 
 }

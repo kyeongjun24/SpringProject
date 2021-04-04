@@ -28,21 +28,27 @@
       ]]>
 	</select>
     
-  <insert id="insertMember"  parameterType="memberVO">
+  	<insert id="insertMember"  parameterType="memberVO">
 		<![CDATA[
 		 insert into t_member(id,pwd, name, email, country)
 		 values(#{id}, #{pwd}, #{name}, #{email}, #{country})
 		]]>      
 	</insert>
 	
+	<select id="updateMemberGET" resultType="memberVO" parameterType="String">
+		<![CDATA[
+	     	select * From t_member
+	     	where id=#{id}
+      	]]> 
+	</select>
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 
    <update id="updateMember"  parameterType="memberVO">
-     <![CDATA[
-	     update t_member
-	     set pwd=#{pwd}, name=#{name}, email=#{email}, country=#{country}
-	     where
-	     id=#{id}
-      ]]>      
+     	<![CDATA[
+	     	update t_member
+	     	set id=#{id}, pwd=#{pwd}, name=#{name}, email=#{email}, country=#{country}
+	     	where
+	     	id=#{id}
+      	]]>      
    </update> 
      
    <delete id="deleteMember"  parameterType="String">

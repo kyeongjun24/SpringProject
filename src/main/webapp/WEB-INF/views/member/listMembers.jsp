@@ -35,7 +35,7 @@
       <td>${member.country}</td>
       <td>${member.email}</td>
       <td>${member.joinDate}</td>
-      <td><a href="${contextPath}/member/modMember.do">수정</a></td>
+      <td><a href="${contextPath}/member/modMember.do?id=${member.id }">수정</a></td>
       <td><a href="${contextPath}/member/removeMember.do?id=${member.id }">삭제</a></td>
     </tr>
   </c:forEach>   
